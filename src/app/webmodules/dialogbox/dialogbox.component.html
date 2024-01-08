@@ -1,0 +1,59 @@
+<form class="example-form" [formGroup]="filledData">
+    <label for="">Quectosys</label>
+    <!-- <label for="">{{serviceHolder}}</label> -->
+
+    <!-- <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput formControlName="id">
+    </mat-form-field> -->
+
+    <mat-form-field class="example-full-width">
+        <mat-label>First name</mat-label>
+        <input matInput formControlName="firstname">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>State</mat-label>
+        <input matInput placeholder="Ex. California" formControlName="state">
+    </mat-form-field>
+-
+    <mat-form-field>
+        <mat-label>Countary</mat-label>
+        <mat-select formControlName="country">
+            <mat-option *ngFor="let countryName of countryList" [value]="countryName.country">{{countryName.No}}.{{countryName.country}}</mat-option>
+            
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Postal Code</mat-label>
+        <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043" formControlName="postalcode">
+        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+<div class="select">
+        <mat-label>Gender</mat-label>
+        <mat-radio-group formControlName="gender">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+</form>
+
+<mat-dialog-actions class="button-row">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-raised-button color="primary"  [mat-dialog-close]="'afterSave'" (click)="addFilledData()">Save</button>
+</mat-dialog-actions>
+

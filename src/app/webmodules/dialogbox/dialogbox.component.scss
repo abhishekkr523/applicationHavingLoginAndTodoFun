@@ -1,0 +1,43 @@
+// *{
+//     // display: flex;
+//     // // flex-direction: column;
+//     // align-items: center;
+//     // justify-content: center;
+//     width: 50vw;
+// }
+form{
+    padding: 35px;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    
+}
+label{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgb(152, 122, 179);
+}
+.example-full-width{
+    width: 100%;
+}
+.button-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+}
+button{
+    width: 10vw;
+}
+datepic{
+    width: 100%;
+}
+.select{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,73 @@
+<form class="example-form" (ngSubmit)="xyz(formData)" >
+    <label for="">Quectosys</label>
+
+    <!-- <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput formControlName="id">
+    </mat-form-field> -->
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput name="name"  [(ngModel)]='formData.name'>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>State</mat-label>
+        <input matInput placeholder="Ex. California" name="state"  [(ngModel)]="formData.state">
+    </mat-form-field>
+-
+    <mat-form-field>
+        <mat-label>Countary</mat-label>
+        <mat-select name="country"  [(ngModel)]="formData.country">
+            <mat-option *ngFor="let countryName of countryList" [value]="countryName">{{countryName.No}}.{{countryName.country}}</mat-option>
+            
+        </mat-select>
+    </mat-form-field>
+    <!-- <mat-form-field>
+        <mat-label>Country</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let country of countryList" [value]="country">{{ country }}</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Postal Code</mat-label>
+        <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043" name="postalCode" [(ngModel)]="formData.postalCode">
+        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" name="date"  [(ngModel)]="formData.date">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+<div class="select">
+        <mat-label>Gender</mat-label>
+        <mat-radio-group name="gender" [(ngModel)]="formData.gender">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <div class="actionbtn">
+        <button mat-raised-button color="warn" >Cancel</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-raised-button color="primary"  type="submit" >Save</button>
+    </div>
+
+</form>
+
+<!-- <mat-dialog-actions class="button-row">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    
+    <button mat-raised-button color="primary" mat-dialog-close >Save</button>
+</mat-dialog-actions> -->
+
+
+

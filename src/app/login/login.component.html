@@ -1,0 +1,11 @@
+<div class="cont">
+    <mat-card>
+        <h2>Login</h2>
+        <form class="example-form" (ngSubmit)="login()">
+            <input type="text" name="username" [(ngModel)]="userName" placeholder="Username" required>
+            <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required>
+            <button mat-raised-button color="primary" type="submit">Login</button>
+        </form>
+        <p> <span>Note:</span> username=user and password=123</p>
+    </mat-card>
+</div>
